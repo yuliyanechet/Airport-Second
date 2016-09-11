@@ -1,0 +1,12 @@
+D:\Нечет\Airport Second\AirportSecond\AirportSecond\bin\Debug\AirportSecond.exe.config
+D:\Нечет\Airport Second\AirportSecond\AirportSecond\bin\Debug\AirportSecond.exe
+D:\Нечет\Airport Second\AirportSecond\AirportSecond\bin\Debug\AirportSecond.pdb
+D:\Нечет\Airport Second\AirportSecond\AirportSecond\obj\Debug\AirportSecond.csprojResolveAssemblyReference.cache
+D:\Нечет\Airport Second\AirportSecond\AirportSecond\obj\Debug\AirportSecond.exe
+D:\Нечет\Airport Second\AirportSecond\AirportSecond\obj\Debug\AirportSecond.pdb
+D:\Нечет\Home-Work-Airport\Home-Work-Airport\Airport\AirportSecond\bin\Debug\AirportSecond.exe.config
+D:\Нечет\Home-Work-Airport\Home-Work-Airport\Airport\AirportSecond\obj\Debug\AirportSecond.exe
+D:\Нечет\Home-Work-Airport\Home-Work-Airport\Airport\AirportSecond\obj\Debug\AirportSecond.pdb
+D:\Нечет\HomeWorkAirport\Home-Work-Airport\Airport\AirportSecond\bin\Debug\AirportSecond.exe.config
+D:\Нечет\HomeWorkAirport\Home-Work-Airport\Airport\AirportSecond\obj\Debug\AirportSecond.exe
+D:\Нечет\HomeWorkAirport\Home-Work-Airport\Airport\AirportSecond\obj\Debug\AirportSecond.pdb
