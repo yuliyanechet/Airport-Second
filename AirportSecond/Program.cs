@@ -20,7 +20,6 @@ namespace AirportSecond
                 Console.WriteLine("3 - edit info (Flight, Price, Passenger)");
                 Console.WriteLine("4 - delete info (Flight, Price, Passenger)");
                 Console.WriteLine("5 - search by");
-                Console.WriteLine("6 - search the nearest flight");
                 Console.WriteLine();
                 //bool noResultFound = true;
                 var choice = Console.ReadLine();
@@ -44,7 +43,7 @@ namespace AirportSecond
                             case "3":
                                 terminal.ShowPassenger();
                                 break;
-                        }                                
+                        }
                         break;
                     case "2":
                         Console.WriteLine("Please choose the action:");
@@ -103,6 +102,33 @@ namespace AirportSecond
                                 break;
                         }
                         break;
+                    case "5":
+                        Console.WriteLine("Please choose the action:");
+                        Console.WriteLine("1 - search by Flight Number");
+                        Console.WriteLine("2 - search by Price");
+                        Console.WriteLine("3 - search by First/Last Name");
+                        Console.WriteLine("4 - search by Passport");
+                        Console.WriteLine("5 - search by City");
+                        var searchChoice = Console.ReadLine();
+                        switch (searchChoice)
+                        {
+                            case "1":
+                                terminal.SearchByFlightNumber();
+                                break;
+                            case "2":
+                                terminal.SearchByPrice();
+                                break;
+                            case "3":
+                                terminal.SearchByFirstLastNames();
+                                break;
+                            case "4":
+                                terminal.SearchByPassport();
+                                break;
+                            case "5":
+                                terminal.SearchByCity();
+                                break;
+                        }
+                        break;               
 
                 }
             }
