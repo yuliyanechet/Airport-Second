@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirportSecond
 {
-    class Terminal
+    public class Terminal
     {
         public List<Flight> arrivals;
         private List<Flight> departures;
@@ -35,14 +35,14 @@ namespace AirportSecond
             AddDepartureFlight(new Flight(Convert.ToDateTime("13/08/2016 22:40:50.42"), 9, "Rimini", "Contact Air Flugdienst", 8, Status.Canceled));
             AddDepartureFlight(new Flight(Convert.ToDateTime("13/08/2016 23:50:50.42"), 58, "Antalia", "Direct Aero Services", 9, Status.Arrived));
 
-            passengers.Add(new Passenger(5, "Alex", "Kaverin", Nationality.russian, "PO45456", Convert.ToDateTime("13/08/1970 10:50:50.42"), Sex.male, FlightClass.business));
-            passengers.Add(new Passenger(5, "Alina", "Kaverina", Nationality.ukrainian, "GH44564", Convert.ToDateTime("12/08/1970 10:50:50.42"), Sex.female, FlightClass.business));
-            passengers.Add(new Passenger(5, "Bernard", "Meison", Nationality.russian, "GHG5446", Convert.ToDateTime("5/08/1970 10:50:50.42"), Sex.male, FlightClass.economy));
-            passengers.Add(new Passenger(122, "Ben", "Soviet", Nationality.african, "HUJ45546", Convert.ToDateTime("14/08/1970 10:50:50.42"), Sex.male, FlightClass.business));
-            passengers.Add(new Passenger(122, "Kate", "Main", Nationality.african, "AGH44556", Convert.ToDateTime("8/08/1970 10:50:50.42"), Sex.female, FlightClass.economy));
-            passengers.Add(new Passenger(162, "Fil", "Offer", Nationality.ukrainian, "ADS78456", Convert.ToDateTime("19/08/1970 10:50:50.42"), Sex.male, FlightClass.business));
-            passengers.Add(new Passenger(162, "Dino", "Valid", Nationality.american, "GG6856", Convert.ToDateTime("13/06/1970 10:50:50.42"), Sex.male, FlightClass.economy));
-            passengers.Add(new Passenger(162, "Fabric", "Bush", Nationality.american, "AK448996", Convert.ToDateTime("16/06/1970 10:50:50.42"), Sex.male, FlightClass.business));
+            passengers.Add(new Passenger(arrivals[0], "Alex", "Kaverin", Nationality.russian, "PO45456", Convert.ToDateTime("13/08/1970 10:50:50.42"), Sex.male, FlightClass.business));
+            passengers.Add(new Passenger(arrivals[0], "Alina", "Kaverina", Nationality.ukrainian, "GH44564", Convert.ToDateTime("12/08/1970 10:50:50.42"), Sex.female, FlightClass.business));
+            passengers.Add(new Passenger(arrivals[0], "Bernard", "Meison", Nationality.russian, "GHG5446", Convert.ToDateTime("5/08/1970 10:50:50.42"), Sex.male, FlightClass.economy));
+            passengers.Add(new Passenger(arrivals[2], "Ben", "Soviet", Nationality.african, "HUJ45546", Convert.ToDateTime("14/08/1970 10:50:50.42"), Sex.male, FlightClass.business));
+            passengers.Add(new Passenger(arrivals[2], "Kate", "Main", Nationality.african, "AGH44556", Convert.ToDateTime("8/08/1970 10:50:50.42"), Sex.female, FlightClass.economy));
+            passengers.Add(new Passenger(departures[2], "Fil", "Offer", Nationality.ukrainian, "ADS78456", Convert.ToDateTime("19/08/1970 10:50:50.42"), Sex.male, FlightClass.business));
+            passengers.Add(new Passenger(departures[2], "Dino", "Valid", Nationality.american, "GG6856", Convert.ToDateTime("13/06/1970 10:50:50.42"), Sex.male, FlightClass.economy));
+            passengers.Add(new Passenger(departures[2], "Fabric", "Bush", Nationality.american, "AK448996", Convert.ToDateTime("16/06/1970 10:50:50.42"), Sex.male, FlightClass.business));
         }
         public void ShowPannel()
         {
@@ -122,6 +122,20 @@ namespace AirportSecond
                 Console.WriteLine();
             }
         }
+
+        void PrintPassenger(Passenger passenger)
+        {
+            string output = "|";
+            output += (passenger.PassengerFlight.Number.ToString()).PadRight(11) + "|";
+            output += (passenger.FirstName.PadRight(15)) + "|";
+            output += (passenger.SecondName.PadRight(15)) + "|";
+            output += (passenger.Nationality.ToString().PadRight(15)) + "|";
+            output += (passenger.Passport.PadRight(10)) + "|";
+            output += (passenger.BirthDay.ToString().PadRight(20)) + "|";
+            output += (passenger.Sex.ToString().PadRight(10)) + "|";
+            output += (passenger.FlightClass.ToString().PadRight(10)) + "|";
+            Console.WriteLine(output);
+        }
         public void ShowPassenger(Passenger passenger = null)
         {
             Console.WriteLine(new string('-', 114));
@@ -131,30 +145,12 @@ namespace AirportSecond
             {
                 foreach (var line in passengers)
                 {
-                    string output = "|";
-                    output += (line.FlightNumber.ToString()).PadRight(11) + "|";
-                    output += (line.FirstName.PadRight(15)) + "|";
-                    output += (line.SecondName.PadRight(15)) + "|";
-                    output += (line.Nationality.ToString().PadRight(15)) + "|";
-                    output += (line.Passport.PadRight(10)) + "|";
-                    output += (line.BirthDay.ToString().PadRight(20)) + "|";
-                    output += (line.Sex.ToString().PadRight(10)) + "|";
-                    output += (line.FlightClass.ToString().PadRight(10)) + "|";
-                    Console.WriteLine(output);
+                    PrintPassenger(line);
                 }
             }
             else
             {
-                string output = "|";
-                output += (passenger.FlightNumber.ToString()).PadRight(11) + "|";
-                output += (passenger.FirstName.PadRight(15)) + "|";
-                output += (passenger.SecondName.PadRight(15)) + "|";
-                output += (passenger.Nationality.ToString().PadRight(15)) + "|";
-                output += (passenger.Passport.PadRight(10)) + "|";
-                output += (passenger.BirthDay.ToString().PadRight(20)) + "|";
-                output += (passenger.Sex.ToString().PadRight(10)) + "|";
-                output += (passenger.FlightClass.ToString().PadRight(10)) + "|";
-                Console.WriteLine(output);
+                PrintPassenger(passenger);
             }
             Console.WriteLine(new string('-', 114));
         }
@@ -250,8 +246,10 @@ namespace AirportSecond
             var flightclassChoice = Console.ReadLine();
             var flightclassList = new FlightClass[] { FlightClass.business, FlightClass.economy };
             var flightclass = flightclassList[Int32.Parse(flightclassChoice) - 1];
+            var currentArrivels = arrivals.Where(c => c.Number == flightnumber).ToList();
+            var currentDepartures = departures.Where(c => c.Number == flightnumber).ToList();
 
-            var currentPassenger = new Passenger(flightnumber, firstName, secondName, nationality, passport, datebirth, sex, flightclass);
+            var currentPassenger = new Passenger(currentArrivels.Count > 0 ? currentArrivels.FirstOrDefault() : currentDepartures.FirstOrDefault(), firstName, secondName, nationality, passport, datebirth, sex, flightclass);
             passengers.Add(currentPassenger);
         }
 
@@ -260,25 +258,12 @@ namespace AirportSecond
             Console.WriteLine("Enter flight number you want to edit: ");
             int editFlifghtNumber = Convert.ToInt32(Console.ReadLine());
             Flight currentFlight = arrivals[0];
-            bool found = false;
-            foreach (var item in arrivals)
+            foreach (var item in arrivals.Concat(departures))
             {
                 if (editFlifghtNumber == item.Number)
                 {
                     currentFlight = item;
-                    found = true;
                     break;
-                }
-            }
-            if (found == false)
-            {
-                foreach (var item in departures)
-                {
-                    if (editFlifghtNumber == item.Number)
-                    {
-                        currentFlight = item;
-                        break;
-                    }
                 }
             }
             Console.WriteLine("Enter new Data value in the folowing format dd/mm/yyyy hh:mm:ss or click Enter to skip");
@@ -365,7 +350,7 @@ namespace AirportSecond
             var flightnumber = Console.ReadLine();
             if (flightnumber != "")
             {
-                currentPassenger.FlightNumber = Int32.Parse(flightnumber);
+                currentPassenger.PassengerFlight.Number = Int32.Parse(flightnumber);
             }
             Console.WriteLine("Enter new First Name or click Enter to skip");
             var firstName = Console.ReadLine();
@@ -430,27 +415,14 @@ namespace AirportSecond
         {
             Console.WriteLine("Enter flight number you want to delete: ");
             int deleteFlifghtNumber = Convert.ToInt32(Console.ReadLine());
-            bool found = false;
-            foreach (var item in arrivals)
+            foreach (var item in arrivals.Concat(departures))
             {
                 if (deleteFlifghtNumber == item.Number)
                 {
                     arrivals.Remove(item);
+                    departures.Remove(item);
                     Console.WriteLine("Record has been succesfully deleted");
-                    found = true;
                     break;
-                }
-            }
-            if (found == false)
-            {
-                foreach (var item in departures)
-                {
-                    if (deleteFlifghtNumber == item.Number)
-                    {
-                        departures.Remove(item);
-                        Console.WriteLine("Record has been succesfully deleted");
-                        break;
-                    }
                 }
             }
         }
@@ -491,27 +463,8 @@ namespace AirportSecond
             var searchFlightNumber = Convert.ToInt32((Console.ReadLine()));
             var currentArrivels = new List<Flight>();
             var currentDepartures = new List<Flight>();
-            bool found = false;
-            foreach (var item in arrivals)
-            {
-                if (searchFlightNumber == item.Number)
-                {
-                    currentArrivels.Add(item);
-                    found = true;
-                    break;
-                }
-            }
-            if (found == false)
-            {
-                foreach (var item in departures)
-                {
-                    if (searchFlightNumber == item.Number)
-                    {
-                        currentDepartures.Add(item);
-                        break;
-                    }
-                }
-            }
+            currentArrivels = arrivals.Where(c => c.Number == searchFlightNumber).ToList();
+            currentDepartures = departures.Where(c => c.Number == searchFlightNumber).ToList();
             ShowSearchResults(currentArrivels, currentDepartures);
         }
 
@@ -525,27 +478,9 @@ namespace AirportSecond
             {
                 if (searchbyPrice == item.Value)
                 {
-                    bool found = false;
-                    foreach (var terminalItem in arrivals)
-                    {
-                        if (terminalItem.Number == item.Key)
-                        {
-                            currentArrivels.Add(terminalItem);
-                            found = true;
-                            break;
-                        }
-                    }
-                    if (found == false)
-                    {
-                        foreach (var terminalItem in departures)
-                        {
-                            if (terminalItem.Number == item.Key)
-                            {
-                                currentDepartures.Add(terminalItem);
-                                break;
-                            }
-                        }
-                    }
+                    currentArrivels = arrivals.Where(c => c.Number == item.Key).ToList();
+                    currentDepartures = departures.Where(c => c.Number == item.Key).ToList();
+                    break;
                 }
             }
             ShowSearchResults(currentArrivels, currentDepartures);
@@ -583,22 +518,8 @@ namespace AirportSecond
             var searchByCity = Console.ReadLine();
             var currentArrivels = new List<Flight>();
             var currentDepartures = new List<Flight>();
-            foreach (var item in arrivals)
-            {
-                if (searchByCity == item.City)
-                {
-                    currentArrivels.Add(item);
-                    break;
-                }
-            }
-            foreach (var item in departures)
-            {
-                if (searchByCity == item.City)
-                {
-                    currentDepartures.Add(item);
-                    break;
-                }
-            }
+            currentArrivels = arrivals.Where(c => c.City == searchByCity).ToList();
+            currentDepartures = departures.Where(c => c.City == searchByCity).ToList();
             ShowSearchResults(currentArrivels, currentDepartures);
         }
     }

@@ -27,7 +27,7 @@ namespace AirportSecond
 
     public class Passenger
     {
-        public int FlightNumber;
+        public Flight PassengerFlight;
         public string FirstName;
         public string SecondName;
         public Nationality Nationality;
@@ -36,9 +36,9 @@ namespace AirportSecond
         public Sex Sex;
         public FlightClass FlightClass;
 
-        public Passenger(int flightNumber, string firstName, string secondName, Nationality nationality, string passport, DateTime birthDay, Sex sex, FlightClass flightClass)
+        public Passenger(Flight passengerFlight, string firstName, string secondName, Nationality nationality, string passport, DateTime birthDay, Sex sex, FlightClass flightClass)
         {
-            FlightNumber = flightNumber;
+            PassengerFlight = passengerFlight;
             FirstName = firstName;
             SecondName = secondName;
             Nationality = nationality;
@@ -46,11 +46,6 @@ namespace AirportSecond
             BirthDay = birthDay;
             Sex = sex;
             FlightClass = flightClass;
-        }        
-
-
-
+        }
     }
-
-
 }

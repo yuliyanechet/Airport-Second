@@ -19,3 +19,15 @@ D:\Нечет\Airport Second\AirportSecond\bin\Debug\AirportSecond.pdb
 D:\Нечет\Airport Second\AirportSecond\obj\Debug\AirportSecond.csprojResolveAssemblyReference.cache
 D:\Нечет\Airport Second\AirportSecond\obj\Debug\AirportSecond.exe
 D:\Нечет\Airport Second\AirportSecond\obj\Debug\AirportSecond.pdb
+C:\Users\Philipp\Desktop\Airport-Second-master\AirportSecond\bin\Debug\AirportSecond.exe.config
+C:\Users\Philipp\Desktop\Airport-Second-master\AirportSecond\obj\Debug\AirportSecond.exe
+C:\Users\Philipp\Desktop\Airport-Second-master\AirportSecond\obj\Debug\AirportSecond.pdb
+C:\Users\Philipp\Desktop\Airport-Second-master\AirportSecond\bin\Debug\AirportSecond.exe
+C:\Users\Philipp\Desktop\Airport-Second-master\AirportSecond\bin\Debug\AirportSecond.pdb
+C:\Users\Philipp\Desktop\Airport-Second-master\AirportSecond\obj\Debug\AirportSecond.csprojResolveAssemblyReference.cache
+D:\Нечет\Airport-Second\AirportSecond\bin\Debug\AirportSecond.exe.config
+D:\Нечет\Airport-Second\AirportSecond\obj\Debug\AirportSecond.exe
+D:\Нечет\Airport-Second\AirportSecond\obj\Debug\AirportSecond.pdb
+D:\Нечет\Airport-Second\AirportSecond\bin\Debug\AirportSecond.exe
+D:\Нечет\Airport-Second\AirportSecond\bin\Debug\AirportSecond.pdb
+D:\Нечет\Airport-Second\AirportSecond\obj\Debug\AirportSecond.csprojResolveAssemblyReference.cache
